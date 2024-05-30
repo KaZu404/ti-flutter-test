@@ -4,6 +4,7 @@ import 'package:chrconnecthpdraft/feature/billing/billing_screen.dart';
 import 'package:chrconnecthpdraft/feature/home/home_screen.dart';
 import 'package:chrconnecthpdraft/feature/inbox/inbox_screen.dart';
 import 'package:chrconnecthpdraft/feature/main/bloc/main_bloc.dart';
+import 'package:chrconnecthpdraft/feature/main/bloc/onboarding_bloc.dart';
 import 'package:chrconnecthpdraft/feature/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,197 +23,213 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   late MainBloc _mainBloc;
+  late OnboardingBloc _onboardingBloc;
 
   @override
   void initState() {
     _mainBloc = MainBloc();
+    _onboardingBloc = OnboardingBloc();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.surface,
-        foregroundColor: Theme.of(context).colorScheme.onSurface,
-        iconTheme: context.theme.iconTheme,
-        elevation: 0,
-        scrolledUnderElevation: 2,
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: Image.asset('images/bell-24.png'),
-            tooltip: context.localizations.show_notifications,
-          ),
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              child: SizedBox.shrink(),
+    return BlocProvider.value(
+      value: _onboardingBloc,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.surface,
+          foregroundColor: Theme.of(context).colorScheme.onSurface,
+          iconTheme: context.theme.iconTheme,
+          elevation: 0,
+          scrolledUnderElevation: 2,
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {},
+              icon: Image.asset('images/bell-24.png'),
+              tooltip: context.localizations.show_notifications,
             ),
-            ListTile(
-              title: Text(
-                'Default',
-                style: Theme.of(context)
-                    .textTheme
-                    .displaySmall
-                    ?.copyWith(fontWeight: FontWeight.w400),
-              ),
-              trailing: BlocBuilder<MainBloc, MainState>(
-                bloc: _mainBloc,
-                buildWhen: (previous, current) =>
-                    previous.defaultVersion != current.defaultVersion,
-                builder: (context, state) {
-                  return Switch(
-                    value: _mainBloc.state.defaultVersion,
-                    onChanged: (bool value) => _mainBloc.add(
-                      MainEvent.changeDashboard(defaultVersion: value),
-                    ),
-                  );
-                },
-              ),
-              onTap: () => _mainBloc.add(
-                MainEvent.changeDashboard(
-                    fullDashboard: !_mainBloc.state.defaultVersion),
-              ),
-            ),
-
-            // Onboarding button
-            Padding(
-              padding: const EdgeInsets.only(top: 6, left: 16, right: 24),
-              child: TextButton(
-                onPressed: () {
-                  // Navigate to home page and close the drawer
-                  _mainBloc.add(const MainEvent.changePage(index: 0));
-                  Navigator.of(context).pop();
-
-                  // Display onboarding overlay
-                  OverlayEntry overlayEntry = OverlayEntry(
-                    builder: (context) => const OnboardingScreen(),
-                  );
-                  Overlay.of(context).insert(overlayEntry);
-                },
-                style: Theme.of(context).textButtonTheme.style?.copyWith(
-                      backgroundColor: WidgetStatePropertyAll(
-                        Theme.of(context).colorScheme.surface,
-                      ),
-                      foregroundColor: WidgetStatePropertyAll(
-                        Theme.of(context).colorScheme.primary,
-                      ),
-                    ),
-                child: Text(context.localizations.show_onboarding),
-              ),
-            )
           ],
         ),
-      ),
-      bottomNavigationBar: BlocBuilder<MainBloc, MainState>(
-        bloc: _mainBloc,
-        buildWhen: (previous, current) => previous.index != current.index,
-        builder: (context, state) {
-          return BottomNavigationBar(
-            selectedItemColor: Theme.of(context).colorScheme.primary,
-            unselectedItemColor: Theme.of(context).colorScheme.outline,
-            selectedLabelStyle: context.textTheme.labelMedium,
-            unselectedLabelStyle: context.textTheme.labelMedium,
-            items: [
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'images/home-24.png',
-                  color: state.index == 0 ? context.colorScheme.primary : null,
-                ),
-                label: context.localizations.home,
-                backgroundColor: Theme.of(context).colorScheme.surface,
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              const DrawerHeader(
+                child: SizedBox.shrink(),
               ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'images/schedule-24.png',
-                  color: state.index == 1 ? context.colorScheme.primary : null,
+              ListTile(
+                title: Text(
+                  'Default',
+                  style: Theme.of(context)
+                      .textTheme
+                      .displaySmall
+                      ?.copyWith(fontWeight: FontWeight.w400),
                 ),
-                label: context.localizations.appointments,
-                backgroundColor: Theme.of(context).colorScheme.surface,
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'images/inbox-24.png',
-                  color: state.index == 2 ? context.colorScheme.primary : null,
+                trailing: BlocBuilder<MainBloc, MainState>(
+                  bloc: _mainBloc,
+                  buildWhen: (previous, current) =>
+                      previous.defaultVersion != current.defaultVersion,
+                  builder: (context, state) {
+                    return Switch(
+                      value: _mainBloc.state.defaultVersion,
+                      onChanged: (bool value) => _mainBloc.add(
+                        MainEvent.changeDashboard(defaultVersion: value),
+                      ),
+                    );
+                  },
                 ),
-                label: context.localizations.inbox,
-                backgroundColor: Theme.of(context).colorScheme.surface,
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'images/money-24.png',
-                  color: state.index == 3 ? context.colorScheme.primary : null,
+                onTap: () => _mainBloc.add(
+                  MainEvent.changeDashboard(
+                      fullDashboard: !_mainBloc.state.defaultVersion),
                 ),
-                label: context.localizations.billing,
-                backgroundColor: Theme.of(context).colorScheme.surface,
               ),
+
+              // Onboarding button
+              Padding(
+                padding: const EdgeInsets.only(top: 6, left: 16, right: 24),
+                child: TextButton(
+                  onPressed: () {
+                    // Navigate to home page and close the drawer
+                    _mainBloc.add(const MainEvent.changePage(index: 0));
+                    Navigator.of(context).pop();
+
+                    // Display onboarding overlay
+                    OverlayEntry overlayEntry = OverlayEntry(
+                      builder: (context) => BlocProvider.value(
+                        value: _onboardingBloc,
+                        child: const OnboardingScreen(),
+                      ),
+                    );
+                    _onboardingBloc.add(
+                      OnboardingEvent.storeOnboardingOverlay(overlayEntry),
+                    );
+
+                    Overlay.of(context).insert(overlayEntry);
+                  },
+                  style: Theme.of(context).textButtonTheme.style?.copyWith(
+                        backgroundColor: WidgetStatePropertyAll(
+                          Theme.of(context).colorScheme.surface,
+                        ),
+                        foregroundColor: WidgetStatePropertyAll(
+                          Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
+                  child: Text(context.localizations.show_onboarding),
+                ),
+              )
             ],
-            currentIndex: _mainBloc.state.index,
-            onTap: (index) =>
-                {_mainBloc.add(MainEvent.changePage(index: index))},
-          );
-        },
-      ),
-      floatingActionButtonLocation: ExpandableFab.location,
-      floatingActionButton: ExpandableFab(
-        type: ExpandableFabType.up,
-        distance: 64,
-        expandedFabSize: ExpandableFabSize.regular,
-        closeButtonStyle: ExpandableFabCloseButtonStyle(
-          child: const Icon(Icons.add_rounded),
-          backgroundColor: context.colorScheme.primary,
+          ),
         ),
-        backgroundColor: context.colorScheme.primary,
-        child: const Icon(Icons.add_rounded),
-        children: [
-          FloatingActionButton.extended(
-            icon: Image.asset(
-              'images/hospital.png',
-              color: context.colorScheme.onPrimary,
-            ),
-            label: Text(
-              context.localizations.find_new_clinic,
-              style: context.textTheme.displaySmall
-                  ?.copyWith(color: context.colorScheme.onPrimary),
-            ),
-            backgroundColor: context.colorScheme.primary,
-            onPressed: () {},
-          ),
-          FloatingActionButton.extended(
-            icon: Image.asset(
-              'images/edit-20.png',
-              color: context.colorScheme.onPrimary,
-            ),
-            label: Text(
-              context.localizations.new_message,
-              style: context.textTheme.displaySmall
-                  ?.copyWith(color: context.colorScheme.onPrimary),
-            ),
-            backgroundColor: context.colorScheme.primary,
-            onPressed: () {},
-          ),
-          FloatingActionButton.extended(
-            icon: const Icon(Icons.add_rounded),
-            label: Text(
-              context.localizations.book_appointment,
-              style: context.textTheme.displaySmall
-                  ?.copyWith(color: context.colorScheme.onPrimary),
-            ),
-            backgroundColor: context.colorScheme.primary,
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: SafeArea(
-        child: BlocBuilder<MainBloc, MainState>(
+        bottomNavigationBar: BlocBuilder<MainBloc, MainState>(
           bloc: _mainBloc,
+          buildWhen: (previous, current) => previous.index != current.index,
           builder: (context, state) {
-            return _showPage();
+            return BottomNavigationBar(
+              selectedItemColor: Theme.of(context).colorScheme.primary,
+              unselectedItemColor: Theme.of(context).colorScheme.outline,
+              selectedLabelStyle: context.textTheme.labelMedium,
+              unselectedLabelStyle: context.textTheme.labelMedium,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'images/home-24.png',
+                    color:
+                        state.index == 0 ? context.colorScheme.primary : null,
+                  ),
+                  label: context.localizations.home,
+                  backgroundColor: Theme.of(context).colorScheme.surface,
+                ),
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'images/schedule-24.png',
+                    color:
+                        state.index == 1 ? context.colorScheme.primary : null,
+                  ),
+                  label: context.localizations.appointments,
+                  backgroundColor: Theme.of(context).colorScheme.surface,
+                ),
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'images/inbox-24.png',
+                    color:
+                        state.index == 2 ? context.colorScheme.primary : null,
+                  ),
+                  label: context.localizations.inbox,
+                  backgroundColor: Theme.of(context).colorScheme.surface,
+                ),
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'images/money-24.png',
+                    color:
+                        state.index == 3 ? context.colorScheme.primary : null,
+                  ),
+                  label: context.localizations.billing,
+                  backgroundColor: Theme.of(context).colorScheme.surface,
+                ),
+              ],
+              currentIndex: _mainBloc.state.index,
+              onTap: (index) =>
+                  {_mainBloc.add(MainEvent.changePage(index: index))},
+            );
           },
+        ),
+        floatingActionButtonLocation: ExpandableFab.location,
+        floatingActionButton: ExpandableFab(
+          type: ExpandableFabType.up,
+          distance: 64,
+          expandedFabSize: ExpandableFabSize.regular,
+          closeButtonStyle: ExpandableFabCloseButtonStyle(
+            child: const Icon(Icons.add_rounded),
+            backgroundColor: context.colorScheme.primary,
+          ),
+          backgroundColor: context.colorScheme.primary,
+          child: const Icon(Icons.add_rounded),
+          children: [
+            FloatingActionButton.extended(
+              icon: Image.asset(
+                'images/hospital.png',
+                color: context.colorScheme.onPrimary,
+              ),
+              label: Text(
+                context.localizations.find_new_clinic,
+                style: context.textTheme.displaySmall
+                    ?.copyWith(color: context.colorScheme.onPrimary),
+              ),
+              backgroundColor: context.colorScheme.primary,
+              onPressed: () {},
+            ),
+            FloatingActionButton.extended(
+              icon: Image.asset(
+                'images/edit-20.png',
+                color: context.colorScheme.onPrimary,
+              ),
+              label: Text(
+                context.localizations.new_message,
+                style: context.textTheme.displaySmall
+                    ?.copyWith(color: context.colorScheme.onPrimary),
+              ),
+              backgroundColor: context.colorScheme.primary,
+              onPressed: () {},
+            ),
+            FloatingActionButton.extended(
+              icon: const Icon(Icons.add_rounded),
+              label: Text(
+                context.localizations.book_appointment,
+                style: context.textTheme.displaySmall
+                    ?.copyWith(color: context.colorScheme.onPrimary),
+              ),
+              backgroundColor: context.colorScheme.primary,
+              onPressed: () {},
+            ),
+          ],
+        ),
+        body: SafeArea(
+          child: BlocBuilder<MainBloc, MainState>(
+            bloc: _mainBloc,
+            builder: (context, state) {
+              return _showPage();
+            },
+          ),
         ),
       ),
     );

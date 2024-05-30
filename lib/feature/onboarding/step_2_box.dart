@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class StepOneBox extends StatefulWidget {
-  const StepOneBox({super.key});
+class StepTwoBox extends StatefulWidget {
+  const StepTwoBox({super.key});
 
   @override
-  State<StepOneBox> createState() => _StepOneBoxState();
+  State<StepTwoBox> createState() => _StepTwoBoxState();
 }
 
-class _StepOneBoxState extends State<StepOneBox> {
+class _StepTwoBoxState extends State<StepTwoBox> {
   bool _visible = false;
 
   @override
@@ -26,10 +26,12 @@ class _StepOneBoxState extends State<StepOneBox> {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 64,
-      left: 6,
-      right: 6,
+    return Container(
+      padding: const EdgeInsets.only(
+        top: 64,
+        left: 6,
+        right: 6,
+      ),
       child: SizedBox(
         height: 300,
         child: Center(
