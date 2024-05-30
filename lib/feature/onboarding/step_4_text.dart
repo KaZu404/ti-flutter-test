@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class StepOneText extends StatefulWidget {
-  const StepOneText({super.key});
+class StepFourText extends StatefulWidget {
+  const StepFourText({super.key});
 
   @override
-  State<StepOneText> createState() => _StepOneTextState();
+  State<StepFourText> createState() => _StepFourTextState();
 }
 
-class _StepOneTextState extends State<StepOneText> {
+class _StepFourTextState extends State<StepFourText> {
   bool _visible = false;
 
   @override
@@ -27,8 +27,8 @@ class _StepOneTextState extends State<StepOneText> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 100,
-      left: 24,
+      top: 380,
+      left: 64,
       right: 24,
       child: AnimatedOpacity(
         opacity: _visible ? 1.0 : 0.0,
@@ -37,14 +37,14 @@ class _StepOneTextState extends State<StepOneText> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "We'll take you on a quick tour of your homepage",
+              "There are direct links to your virtual appointments",
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             const SizedBox(height: 12),
             Row(
               children: [
                 Text(
-                  "Let's go!",
+                  "Continue",
                   style: Theme.of(context).textTheme.displayMedium,
                 ),
                 const SizedBox(

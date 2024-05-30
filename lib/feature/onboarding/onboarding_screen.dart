@@ -1,4 +1,7 @@
+import 'package:chrconnecthpdraft/feature/onboarding/step_1_box.dart';
 import 'package:chrconnecthpdraft/feature/onboarding/step_3_text.dart';
+import 'package:chrconnecthpdraft/feature/onboarding/step_4_box.dart';
+import 'package:chrconnecthpdraft/feature/onboarding/step_4_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:chrconnecthpdraft/feature/main/bloc/onboarding_bloc.dart';
@@ -20,14 +23,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int _currentStep = 0;
 
   final List<Widget> _holeWidgets = [
-    const SizedBox(),
+    const StepOneBox(),
     const StepTwoBox(),
     const StepThreeBox(),
+    const StepFourBox(),
   ];
   final List<Widget> _descriptionWidgets = [
     const StepOneText(),
     const StepTwoText(),
     const StepThreeText(),
+    const StepFourText(),
   ];
 
   _displayNextStep() {
