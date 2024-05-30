@@ -1,4 +1,6 @@
 import 'package:chrconnecthpdraft/feature/app/extension/context.dart';
+import 'package:chrconnecthpdraft/feature/onboarding/step_1_box.dart';
+import 'package:chrconnecthpdraft/feature/onboarding/step_1_text.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -50,31 +52,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
 
                   // Following widgets draw holes
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 6)
-                              .copyWith(top: 64),
-                          height: 300,
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  const StepOneBox(),
                 ],
               ),
             ),
 
             // Text content
-            const Text(
-              "Test",
-              style: TextStyle(color: Colors.amber),
-            ),
+            const StepOneText(),
           ],
         ),
       ),
