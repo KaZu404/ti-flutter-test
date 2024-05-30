@@ -22,11 +22,9 @@ class AppTheme {
     onError: Color(0xFFFFFFFF),
     errorContainer: Color(0xFFFFDAD6),
     onErrorContainer: Color(0xFF410002),
-    background: Color(0xFFFFFFFF),
-    onBackground: Color(0xFF000000),
     surface: Color(0xFFFFFFFF),
     onSurface: Color(0xFF000000),
-    surfaceVariant: Color(0xFFFFE36E),
+    surfaceContainerHighest: Color(0xFFFFE36E),
     onSurfaceVariant: Color(0xFF000000),
     outline: Color(0xFF686E71),
     brightness: Brightness.light,
@@ -81,7 +79,7 @@ class AppTheme {
   );
 
   static final chipTheme = ChipThemeData(
-    backgroundColor: colorScheme.background,
+    backgroundColor: colorScheme.surface,
     selectedColor: colorScheme.secondaryContainer,
     shape:
         StadiumBorder(side: BorderSide(color: colorScheme.tertiary, width: 1)),

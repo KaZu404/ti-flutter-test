@@ -32,8 +32,8 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.background,
-        foregroundColor: Theme.of(context).colorScheme.onBackground,
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        foregroundColor: Theme.of(context).colorScheme.onSurface,
         iconTheme: context.theme.iconTheme,
         elevation: 0,
         scrolledUnderElevation: 2,
@@ -96,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
                   color: state.index == 0 ? context.colorScheme.primary : null,
                 ),
                 label: context.localizations.home,
-                backgroundColor: Theme.of(context).colorScheme.background,
+                backgroundColor: Theme.of(context).colorScheme.surface,
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
@@ -104,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
                   color: state.index == 1 ? context.colorScheme.primary : null,
                 ),
                 label: context.localizations.appointments,
-                backgroundColor: Theme.of(context).colorScheme.background,
+                backgroundColor: Theme.of(context).colorScheme.surface,
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
@@ -112,7 +112,7 @@ class _MainScreenState extends State<MainScreen> {
                   color: state.index == 2 ? context.colorScheme.primary : null,
                 ),
                 label: context.localizations.inbox,
-                backgroundColor: Theme.of(context).colorScheme.background,
+                backgroundColor: Theme.of(context).colorScheme.surface,
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
@@ -120,7 +120,7 @@ class _MainScreenState extends State<MainScreen> {
                   color: state.index == 3 ? context.colorScheme.primary : null,
                 ),
                 label: context.localizations.billing,
-                backgroundColor: Theme.of(context).colorScheme.background,
+                backgroundColor: Theme.of(context).colorScheme.surface,
               ),
             ],
             currentIndex: _mainBloc.state.index,

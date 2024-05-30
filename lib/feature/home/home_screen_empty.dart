@@ -57,11 +57,11 @@ class HomeScreenEmpty extends StatelessWidget {
                                 .textButtonTheme
                                 .style
                                 ?.copyWith(
-                                  textStyle: MaterialStatePropertyAll(
+                                  textStyle: WidgetStatePropertyAll(
                                       Theme.of(context)
                                           .textTheme
                                           .displayMedium),
-                                  padding: const MaterialStatePropertyAll(
+                                  padding: const WidgetStatePropertyAll(
                                       EdgeInsets.symmetric(vertical: 16)),
                                 ),
                             child: Text(context.localizations.new_appointment),
@@ -89,15 +89,15 @@ class HomeScreenEmpty extends StatelessWidget {
                                 .textButtonTheme
                                 .style
                                 ?.copyWith(
-                                  textStyle: MaterialStatePropertyAll(
+                                  textStyle: WidgetStatePropertyAll(
                                       Theme.of(context)
                                           .textTheme
                                           .displayMedium),
-                                  padding: const MaterialStatePropertyAll(
+                                  padding: const WidgetStatePropertyAll(
                                       EdgeInsets.symmetric(vertical: 16)),
-                                  backgroundColor: MaterialStatePropertyAll(
-                                      Theme.of(context).colorScheme.background),
-                                  foregroundColor: MaterialStatePropertyAll(
+                                  backgroundColor: WidgetStatePropertyAll(
+                                      Theme.of(context).colorScheme.surface),
+                                  foregroundColor: WidgetStatePropertyAll(
                                       Theme.of(context).colorScheme.primary),
                                 ),
                             child: Text(context.localizations.new_message),

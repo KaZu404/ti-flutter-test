@@ -26,9 +26,9 @@ class Reminders extends StatelessWidget {
                   .textButtonTheme
                   .style
                   ?.copyWith(
-                backgroundColor: MaterialStatePropertyAll(
-                    Theme.of(context).colorScheme.background),
-                foregroundColor: MaterialStatePropertyAll(
+                backgroundColor: WidgetStatePropertyAll(
+                    Theme.of(context).colorScheme.surface),
+                foregroundColor: WidgetStatePropertyAll(
                     Theme.of(context).colorScheme.primary),
               ),
               image: CircleAvatar(
@@ -58,9 +58,9 @@ class Reminders extends StatelessWidget {
                   .textButtonTheme
                   .style
                   ?.copyWith(
-                backgroundColor: MaterialStatePropertyAll(
-                    Theme.of(context).colorScheme.background),
-                foregroundColor: MaterialStatePropertyAll(
+                backgroundColor: WidgetStatePropertyAll(
+                    Theme.of(context).colorScheme.surface),
+                foregroundColor: WidgetStatePropertyAll(
                     Theme.of(context).colorScheme.primary),
               ),
               dueDate: 'Due date: May 27th, 2022',

@@ -39,7 +39,7 @@ class InboxItem extends StatelessWidget {
             image: image,
             imageRadius: imageRadius,
             count: count,
-            countColor: Theme.of(context).colorScheme.surfaceVariant,
+            countColor: Theme.of(context).colorScheme.surfaceContainerHighest,
           ),
           const SizedBox(width: 16),
           Expanded(

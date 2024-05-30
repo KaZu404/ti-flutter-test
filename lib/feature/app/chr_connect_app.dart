@@ -21,7 +21,7 @@ class CHRConnectApp extends StatelessWidget {
       home: const MainScreen(),
       theme: ThemeData(
         colorScheme: AppTheme.colorScheme,
-        scaffoldBackgroundColor: AppTheme.colorScheme.background,
+        scaffoldBackgroundColor: AppTheme.colorScheme.surface,
         textTheme: AppTheme.textTheme,
         textButtonTheme: AppTheme.textButtonTheme,
         chipTheme: AppTheme.chipTheme,

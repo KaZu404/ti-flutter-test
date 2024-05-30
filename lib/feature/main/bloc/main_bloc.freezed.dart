@@ -12,7 +12,7 @@ part of 'main_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$MainEvent {
@@ -75,21 +75,22 @@ class _$MainEventCopyWithImpl<$Res, $Val extends MainEvent>
 }
 
 /// @nodoc
-abstract class _$$_MainEventChangeDashboardCopyWith<$Res> {
-  factory _$$_MainEventChangeDashboardCopyWith(
-          _$_MainEventChangeDashboard value,
-          $Res Function(_$_MainEventChangeDashboard) then) =
-      __$$_MainEventChangeDashboardCopyWithImpl<$Res>;
+abstract class _$$MainEventChangeDashboardImplCopyWith<$Res> {
+  factory _$$MainEventChangeDashboardImplCopyWith(
+          _$MainEventChangeDashboardImpl value,
+          $Res Function(_$MainEventChangeDashboardImpl) then) =
+      __$$MainEventChangeDashboardImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool fullDashboard, bool defaultVersion});
 }
 
 /// @nodoc
-class __$$_MainEventChangeDashboardCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_MainEventChangeDashboard>
-    implements _$$_MainEventChangeDashboardCopyWith<$Res> {
-  __$$_MainEventChangeDashboardCopyWithImpl(_$_MainEventChangeDashboard _value,
-      $Res Function(_$_MainEventChangeDashboard) _then)
+class __$$MainEventChangeDashboardImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$MainEventChangeDashboardImpl>
+    implements _$$MainEventChangeDashboardImplCopyWith<$Res> {
+  __$$MainEventChangeDashboardImplCopyWithImpl(
+      _$MainEventChangeDashboardImpl _value,
+      $Res Function(_$MainEventChangeDashboardImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -98,7 +99,7 @@ class __$$_MainEventChangeDashboardCopyWithImpl<$Res>
     Object? fullDashboard = null,
     Object? defaultVersion = null,
   }) {
-    return _then(_$_MainEventChangeDashboard(
+    return _then(_$MainEventChangeDashboardImpl(
       fullDashboard: null == fullDashboard
           ? _value.fullDashboard
           : fullDashboard // ignore: cast_nullable_to_non_nullable
@@ -113,8 +114,8 @@ class __$$_MainEventChangeDashboardCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MainEventChangeDashboard implements _MainEventChangeDashboard {
-  const _$_MainEventChangeDashboard(
+class _$MainEventChangeDashboardImpl implements _MainEventChangeDashboard {
+  const _$MainEventChangeDashboardImpl(
       {this.fullDashboard = true, this.defaultVersion = true});
 
   @override
@@ -130,10 +131,10 @@ class _$_MainEventChangeDashboard implements _MainEventChangeDashboard {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MainEventChangeDashboard &&
+            other is _$MainEventChangeDashboardImpl &&
             (identical(other.fullDashboard, fullDashboard) ||
                 other.fullDashboard == fullDashboard) &&
             (identical(other.defaultVersion, defaultVersion) ||
@@ -146,9 +147,9 @@ class _$_MainEventChangeDashboard implements _MainEventChangeDashboard {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MainEventChangeDashboardCopyWith<_$_MainEventChangeDashboard>
-      get copyWith => __$$_MainEventChangeDashboardCopyWithImpl<
-          _$_MainEventChangeDashboard>(this, _$identity);
+  _$$MainEventChangeDashboardImplCopyWith<_$MainEventChangeDashboardImpl>
+      get copyWith => __$$MainEventChangeDashboardImplCopyWithImpl<
+          _$MainEventChangeDashboardImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -217,30 +218,30 @@ class _$_MainEventChangeDashboard implements _MainEventChangeDashboard {
 abstract class _MainEventChangeDashboard implements MainEvent {
   const factory _MainEventChangeDashboard(
       {final bool fullDashboard,
-      final bool defaultVersion}) = _$_MainEventChangeDashboard;
+      final bool defaultVersion}) = _$MainEventChangeDashboardImpl;
 
   bool get fullDashboard;
   bool get defaultVersion;
   @JsonKey(ignore: true)
-  _$$_MainEventChangeDashboardCopyWith<_$_MainEventChangeDashboard>
+  _$$MainEventChangeDashboardImplCopyWith<_$MainEventChangeDashboardImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_MainEventChangePageCopyWith<$Res> {
-  factory _$$_MainEventChangePageCopyWith(_$_MainEventChangePage value,
-          $Res Function(_$_MainEventChangePage) then) =
-      __$$_MainEventChangePageCopyWithImpl<$Res>;
+abstract class _$$MainEventChangePageImplCopyWith<$Res> {
+  factory _$$MainEventChangePageImplCopyWith(_$MainEventChangePageImpl value,
+          $Res Function(_$MainEventChangePageImpl) then) =
+      __$$MainEventChangePageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$_MainEventChangePageCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_MainEventChangePage>
-    implements _$$_MainEventChangePageCopyWith<$Res> {
-  __$$_MainEventChangePageCopyWithImpl(_$_MainEventChangePage _value,
-      $Res Function(_$_MainEventChangePage) _then)
+class __$$MainEventChangePageImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$MainEventChangePageImpl>
+    implements _$$MainEventChangePageImplCopyWith<$Res> {
+  __$$MainEventChangePageImplCopyWithImpl(_$MainEventChangePageImpl _value,
+      $Res Function(_$MainEventChangePageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -248,7 +249,7 @@ class __$$_MainEventChangePageCopyWithImpl<$Res>
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$_MainEventChangePage(
+    return _then(_$MainEventChangePageImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -259,8 +260,8 @@ class __$$_MainEventChangePageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MainEventChangePage implements _MainEventChangePage {
-  const _$_MainEventChangePage({required this.index});
+class _$MainEventChangePageImpl implements _MainEventChangePage {
+  const _$MainEventChangePageImpl({required this.index});
 
   @override
   final int index;
@@ -271,10 +272,10 @@ class _$_MainEventChangePage implements _MainEventChangePage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MainEventChangePage &&
+            other is _$MainEventChangePageImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
@@ -284,8 +285,8 @@ class _$_MainEventChangePage implements _MainEventChangePage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MainEventChangePageCopyWith<_$_MainEventChangePage> get copyWith =>
-      __$$_MainEventChangePageCopyWithImpl<_$_MainEventChangePage>(
+  _$$MainEventChangePageImplCopyWith<_$MainEventChangePageImpl> get copyWith =>
+      __$$MainEventChangePageImplCopyWithImpl<_$MainEventChangePageImpl>(
           this, _$identity);
 
   @override
@@ -354,11 +355,11 @@ class _$_MainEventChangePage implements _MainEventChangePage {
 
 abstract class _MainEventChangePage implements MainEvent {
   const factory _MainEventChangePage({required final int index}) =
-      _$_MainEventChangePage;
+      _$MainEventChangePageImpl;
 
   int get index;
   @JsonKey(ignore: true)
-  _$$_MainEventChangePageCopyWith<_$_MainEventChangePage> get copyWith =>
+  _$$MainEventChangePageImplCopyWith<_$MainEventChangePageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -416,21 +417,22 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
 }
 
 /// @nodoc
-abstract class _$$_MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
-  factory _$$_MainStateCopyWith(
-          _$_MainState value, $Res Function(_$_MainState) then) =
-      __$$_MainStateCopyWithImpl<$Res>;
+abstract class _$$MainStateImplCopyWith<$Res>
+    implements $MainStateCopyWith<$Res> {
+  factory _$$MainStateImplCopyWith(
+          _$MainStateImpl value, $Res Function(_$MainStateImpl) then) =
+      __$$MainStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int index, bool fullDashboard, bool defaultVersion});
 }
 
 /// @nodoc
-class __$$_MainStateCopyWithImpl<$Res>
-    extends _$MainStateCopyWithImpl<$Res, _$_MainState>
-    implements _$$_MainStateCopyWith<$Res> {
-  __$$_MainStateCopyWithImpl(
-      _$_MainState _value, $Res Function(_$_MainState) _then)
+class __$$MainStateImplCopyWithImpl<$Res>
+    extends _$MainStateCopyWithImpl<$Res, _$MainStateImpl>
+    implements _$$MainStateImplCopyWith<$Res> {
+  __$$MainStateImplCopyWithImpl(
+      _$MainStateImpl _value, $Res Function(_$MainStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -440,7 +442,7 @@ class __$$_MainStateCopyWithImpl<$Res>
     Object? fullDashboard = null,
     Object? defaultVersion = null,
   }) {
-    return _then(_$_MainState(
+    return _then(_$MainStateImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -459,8 +461,8 @@ class __$$_MainStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MainState implements _MainState {
-  const _$_MainState(
+class _$MainStateImpl implements _MainState {
+  const _$MainStateImpl(
       {this.index = 0, this.fullDashboard = true, this.defaultVersion = true});
 
   @override
@@ -479,10 +481,10 @@ class _$_MainState implements _MainState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MainState &&
+            other is _$MainStateImpl &&
             (identical(other.index, index) || other.index == index) &&
             (identical(other.fullDashboard, fullDashboard) ||
                 other.fullDashboard == fullDashboard) &&
@@ -497,15 +499,15 @@ class _$_MainState implements _MainState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MainStateCopyWith<_$_MainState> get copyWith =>
-      __$$_MainStateCopyWithImpl<_$_MainState>(this, _$identity);
+  _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
+      __$$MainStateImplCopyWithImpl<_$MainStateImpl>(this, _$identity);
 }
 
 abstract class _MainState implements MainState {
   const factory _MainState(
       {final int index,
       final bool fullDashboard,
-      final bool defaultVersion}) = _$_MainState;
+      final bool defaultVersion}) = _$MainStateImpl;
 
   @override
   int get index;
@@ -515,6 +517,6 @@ abstract class _MainState implements MainState {
   bool get defaultVersion;
   @override
   @JsonKey(ignore: true)
-  _$$_MainStateCopyWith<_$_MainState> get copyWith =>
+  _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
