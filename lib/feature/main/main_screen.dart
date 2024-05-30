@@ -4,6 +4,7 @@ import 'package:chrconnecthpdraft/feature/billing/billing_screen.dart';
 import 'package:chrconnecthpdraft/feature/home/home_screen.dart';
 import 'package:chrconnecthpdraft/feature/inbox/inbox_screen.dart';
 import 'package:chrconnecthpdraft/feature/main/bloc/main_bloc.dart';
+import 'package:chrconnecthpdraft/feature/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
@@ -77,6 +78,33 @@ class _MainScreenState extends State<MainScreen> {
                     fullDashboard: !_mainBloc.state.defaultVersion),
               ),
             ),
+
+            // Onboarding button
+            Padding(
+              padding: const EdgeInsets.only(top: 6, left: 16, right: 24),
+              child: TextButton(
+                onPressed: () {
+                  // Navigate to home page and close the drawer
+                  _mainBloc.add(const MainEvent.changePage(index: 0));
+                  Navigator.of(context).pop();
+
+                  // Display onboarding overlay
+                  OverlayEntry overlayEntry = OverlayEntry(
+                    builder: (context) => const OnboardingScreen(),
+                  );
+                  Overlay.of(context).insert(overlayEntry);
+                },
+                style: Theme.of(context).textButtonTheme.style?.copyWith(
+                      backgroundColor: WidgetStatePropertyAll(
+                        Theme.of(context).colorScheme.surface,
+                      ),
+                      foregroundColor: WidgetStatePropertyAll(
+                        Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                child: Text(context.localizations.show_onboarding),
+              ),
+            )
           ],
         ),
       ),
