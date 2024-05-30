@@ -1,11 +1,13 @@
-import 'package:chrconnecthpdraft/feature/main/bloc/onboarding_bloc.dart';
-import 'package:chrconnecthpdraft/feature/onboarding/step_2_box.dart';
-import 'package:chrconnecthpdraft/feature/onboarding/step_2_text.dart';
+import 'package:chrconnecthpdraft/feature/onboarding/step_3_text.dart';
 import 'package:flutter/material.dart';
-import 'package:chrconnecthpdraft/feature/app/extension/context.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:chrconnecthpdraft/feature/main/bloc/onboarding_bloc.dart';
+import 'package:chrconnecthpdraft/feature/app/extension/context.dart';
 
 import 'step_1_text.dart';
+import 'step_2_box.dart';
+import 'step_2_text.dart';
+import 'step_3_box.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -20,10 +22,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final List<Widget> _holeWidgets = [
     const SizedBox(),
     const StepTwoBox(),
+    const StepThreeBox(),
   ];
   final List<Widget> _descriptionWidgets = [
     const StepOneText(),
     const StepTwoText(),
+    const StepThreeText(),
   ];
 
   _displayNextStep() {
@@ -31,6 +35,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       setState(() {
         _currentStep += 1;
       });
+
+      if (_currentStep == 2) {
+        context
+            .read<OnboardingBloc>()
+            .add(const OnboardingEvent.scrollDownToAppointments());
+      }
     } else {
       context.read<OnboardingBloc>().add(const OnboardingEvent.close());
     }
@@ -82,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     Align(
                       alignment: Alignment.topCenter,
                       child: AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 500),
+                        duration: const Duration(milliseconds: 0),
                         child: _holeWidgets[_currentStep],
                       ),
                     )

@@ -14,8 +14,23 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
       ));
     });
     on<_OnboardingEventClose>((event, emit) {
+      state.homepageScrollController?.jumpTo(0);
       state.overlay?.remove();
       emit(state.copyWith(overlay: null));
+    });
+
+    on<_OnboardingEventStoreHomepageScrollController>((event, emit) {
+      emit(state.copyWith(
+        homepageScrollController: event.scrollController,
+      ));
+    });
+    on<_OnboardingEventScrollDownToHomepageAppointments>((event, emit) {
+      state.homepageScrollController?.animateTo(
+        300,
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeInOut,
+      );
+      emit(state);
     });
   }
 }

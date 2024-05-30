@@ -20,18 +20,27 @@ mixin _$OnboardingEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(OverlayEntry overlayEntry) storeOnboardingOverlay,
     required TResult Function() close,
+    required TResult Function(ScrollController scrollController)
+        storeHomepageScrollController,
+    required TResult Function() scrollDownToAppointments,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
     TResult? Function()? close,
+    TResult? Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult? Function()? scrollDownToAppointments,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
     TResult Function()? close,
+    TResult Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult Function()? scrollDownToAppointments,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +49,12 @@ mixin _$OnboardingEvent {
     required TResult Function(_OnboardingEventStoreOnboardingOverlay value)
         storeOnboardingOverlay,
     required TResult Function(_OnboardingEventClose value) close,
+    required TResult Function(
+            _OnboardingEventStoreHomepageScrollController value)
+        storeHomepageScrollController,
+    required TResult Function(
+            _OnboardingEventScrollDownToHomepageAppointments value)
+        scrollDownToAppointments,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +62,10 @@ mixin _$OnboardingEvent {
     TResult? Function(_OnboardingEventStoreOnboardingOverlay value)?
         storeOnboardingOverlay,
     TResult? Function(_OnboardingEventClose value)? close,
+    TResult? Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult? Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +73,10 @@ mixin _$OnboardingEvent {
     TResult Function(_OnboardingEventStoreOnboardingOverlay value)?
         storeOnboardingOverlay,
     TResult Function(_OnboardingEventClose value)? close,
+    TResult Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,6 +173,9 @@ class _$OnboardingEventStoreOnboardingOverlayImpl
   TResult when<TResult extends Object?>({
     required TResult Function(OverlayEntry overlayEntry) storeOnboardingOverlay,
     required TResult Function() close,
+    required TResult Function(ScrollController scrollController)
+        storeHomepageScrollController,
+    required TResult Function() scrollDownToAppointments,
   }) {
     return storeOnboardingOverlay(overlayEntry);
   }
@@ -159,6 +185,9 @@ class _$OnboardingEventStoreOnboardingOverlayImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
     TResult? Function()? close,
+    TResult? Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult? Function()? scrollDownToAppointments,
   }) {
     return storeOnboardingOverlay?.call(overlayEntry);
   }
@@ -168,6 +197,9 @@ class _$OnboardingEventStoreOnboardingOverlayImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
     TResult Function()? close,
+    TResult Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult Function()? scrollDownToAppointments,
     required TResult orElse(),
   }) {
     if (storeOnboardingOverlay != null) {
@@ -182,6 +214,12 @@ class _$OnboardingEventStoreOnboardingOverlayImpl
     required TResult Function(_OnboardingEventStoreOnboardingOverlay value)
         storeOnboardingOverlay,
     required TResult Function(_OnboardingEventClose value) close,
+    required TResult Function(
+            _OnboardingEventStoreHomepageScrollController value)
+        storeHomepageScrollController,
+    required TResult Function(
+            _OnboardingEventScrollDownToHomepageAppointments value)
+        scrollDownToAppointments,
   }) {
     return storeOnboardingOverlay(this);
   }
@@ -192,6 +230,10 @@ class _$OnboardingEventStoreOnboardingOverlayImpl
     TResult? Function(_OnboardingEventStoreOnboardingOverlay value)?
         storeOnboardingOverlay,
     TResult? Function(_OnboardingEventClose value)? close,
+    TResult? Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult? Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
   }) {
     return storeOnboardingOverlay?.call(this);
   }
@@ -202,6 +244,10 @@ class _$OnboardingEventStoreOnboardingOverlayImpl
     TResult Function(_OnboardingEventStoreOnboardingOverlay value)?
         storeOnboardingOverlay,
     TResult Function(_OnboardingEventClose value)? close,
+    TResult Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
     required TResult orElse(),
   }) {
     if (storeOnboardingOverlay != null) {
@@ -265,6 +311,9 @@ class _$OnboardingEventCloseImpl implements _OnboardingEventClose {
   TResult when<TResult extends Object?>({
     required TResult Function(OverlayEntry overlayEntry) storeOnboardingOverlay,
     required TResult Function() close,
+    required TResult Function(ScrollController scrollController)
+        storeHomepageScrollController,
+    required TResult Function() scrollDownToAppointments,
   }) {
     return close();
   }
@@ -274,6 +323,9 @@ class _$OnboardingEventCloseImpl implements _OnboardingEventClose {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
     TResult? Function()? close,
+    TResult? Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult? Function()? scrollDownToAppointments,
   }) {
     return close?.call();
   }
@@ -283,6 +335,9 @@ class _$OnboardingEventCloseImpl implements _OnboardingEventClose {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
     TResult Function()? close,
+    TResult Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult Function()? scrollDownToAppointments,
     required TResult orElse(),
   }) {
     if (close != null) {
@@ -297,6 +352,12 @@ class _$OnboardingEventCloseImpl implements _OnboardingEventClose {
     required TResult Function(_OnboardingEventStoreOnboardingOverlay value)
         storeOnboardingOverlay,
     required TResult Function(_OnboardingEventClose value) close,
+    required TResult Function(
+            _OnboardingEventStoreHomepageScrollController value)
+        storeHomepageScrollController,
+    required TResult Function(
+            _OnboardingEventScrollDownToHomepageAppointments value)
+        scrollDownToAppointments,
   }) {
     return close(this);
   }
@@ -307,6 +368,10 @@ class _$OnboardingEventCloseImpl implements _OnboardingEventClose {
     TResult? Function(_OnboardingEventStoreOnboardingOverlay value)?
         storeOnboardingOverlay,
     TResult? Function(_OnboardingEventClose value)? close,
+    TResult? Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult? Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
   }) {
     return close?.call(this);
   }
@@ -317,6 +382,10 @@ class _$OnboardingEventCloseImpl implements _OnboardingEventClose {
     TResult Function(_OnboardingEventStoreOnboardingOverlay value)?
         storeOnboardingOverlay,
     TResult Function(_OnboardingEventClose value)? close,
+    TResult Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
     required TResult orElse(),
   }) {
     if (close != null) {
@@ -331,8 +400,325 @@ abstract class _OnboardingEventClose implements OnboardingEvent {
 }
 
 /// @nodoc
+abstract class _$$OnboardingEventStoreHomepageScrollControllerImplCopyWith<
+    $Res> {
+  factory _$$OnboardingEventStoreHomepageScrollControllerImplCopyWith(
+          _$OnboardingEventStoreHomepageScrollControllerImpl value,
+          $Res Function(_$OnboardingEventStoreHomepageScrollControllerImpl)
+              then) =
+      __$$OnboardingEventStoreHomepageScrollControllerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ScrollController scrollController});
+}
+
+/// @nodoc
+class __$$OnboardingEventStoreHomepageScrollControllerImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res,
+        _$OnboardingEventStoreHomepageScrollControllerImpl>
+    implements
+        _$$OnboardingEventStoreHomepageScrollControllerImplCopyWith<$Res> {
+  __$$OnboardingEventStoreHomepageScrollControllerImplCopyWithImpl(
+      _$OnboardingEventStoreHomepageScrollControllerImpl _value,
+      $Res Function(_$OnboardingEventStoreHomepageScrollControllerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? scrollController = null,
+  }) {
+    return _then(_$OnboardingEventStoreHomepageScrollControllerImpl(
+      null == scrollController
+          ? _value.scrollController
+          : scrollController // ignore: cast_nullable_to_non_nullable
+              as ScrollController,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnboardingEventStoreHomepageScrollControllerImpl
+    implements _OnboardingEventStoreHomepageScrollController {
+  const _$OnboardingEventStoreHomepageScrollControllerImpl(
+      this.scrollController);
+
+  @override
+  final ScrollController scrollController;
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.storeHomepageScrollController(scrollController: $scrollController)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnboardingEventStoreHomepageScrollControllerImpl &&
+            (identical(other.scrollController, scrollController) ||
+                other.scrollController == scrollController));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, scrollController);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnboardingEventStoreHomepageScrollControllerImplCopyWith<
+          _$OnboardingEventStoreHomepageScrollControllerImpl>
+      get copyWith =>
+          __$$OnboardingEventStoreHomepageScrollControllerImplCopyWithImpl<
+                  _$OnboardingEventStoreHomepageScrollControllerImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(OverlayEntry overlayEntry) storeOnboardingOverlay,
+    required TResult Function() close,
+    required TResult Function(ScrollController scrollController)
+        storeHomepageScrollController,
+    required TResult Function() scrollDownToAppointments,
+  }) {
+    return storeHomepageScrollController(scrollController);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
+    TResult? Function()? close,
+    TResult? Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult? Function()? scrollDownToAppointments,
+  }) {
+    return storeHomepageScrollController?.call(scrollController);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
+    TResult Function()? close,
+    TResult Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult Function()? scrollDownToAppointments,
+    required TResult orElse(),
+  }) {
+    if (storeHomepageScrollController != null) {
+      return storeHomepageScrollController(scrollController);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnboardingEventStoreOnboardingOverlay value)
+        storeOnboardingOverlay,
+    required TResult Function(_OnboardingEventClose value) close,
+    required TResult Function(
+            _OnboardingEventStoreHomepageScrollController value)
+        storeHomepageScrollController,
+    required TResult Function(
+            _OnboardingEventScrollDownToHomepageAppointments value)
+        scrollDownToAppointments,
+  }) {
+    return storeHomepageScrollController(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnboardingEventStoreOnboardingOverlay value)?
+        storeOnboardingOverlay,
+    TResult? Function(_OnboardingEventClose value)? close,
+    TResult? Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult? Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
+  }) {
+    return storeHomepageScrollController?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnboardingEventStoreOnboardingOverlay value)?
+        storeOnboardingOverlay,
+    TResult Function(_OnboardingEventClose value)? close,
+    TResult Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
+    required TResult orElse(),
+  }) {
+    if (storeHomepageScrollController != null) {
+      return storeHomepageScrollController(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnboardingEventStoreHomepageScrollController
+    implements OnboardingEvent {
+  const factory _OnboardingEventStoreHomepageScrollController(
+          final ScrollController scrollController) =
+      _$OnboardingEventStoreHomepageScrollControllerImpl;
+
+  ScrollController get scrollController;
+  @JsonKey(ignore: true)
+  _$$OnboardingEventStoreHomepageScrollControllerImplCopyWith<
+          _$OnboardingEventStoreHomepageScrollControllerImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnboardingEventScrollDownToHomepageAppointmentsImplCopyWith<
+    $Res> {
+  factory _$$OnboardingEventScrollDownToHomepageAppointmentsImplCopyWith(
+          _$OnboardingEventScrollDownToHomepageAppointmentsImpl value,
+          $Res Function(_$OnboardingEventScrollDownToHomepageAppointmentsImpl)
+              then) =
+      __$$OnboardingEventScrollDownToHomepageAppointmentsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnboardingEventScrollDownToHomepageAppointmentsImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res,
+        _$OnboardingEventScrollDownToHomepageAppointmentsImpl>
+    implements
+        _$$OnboardingEventScrollDownToHomepageAppointmentsImplCopyWith<$Res> {
+  __$$OnboardingEventScrollDownToHomepageAppointmentsImplCopyWithImpl(
+      _$OnboardingEventScrollDownToHomepageAppointmentsImpl _value,
+      $Res Function(_$OnboardingEventScrollDownToHomepageAppointmentsImpl)
+          _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnboardingEventScrollDownToHomepageAppointmentsImpl
+    implements _OnboardingEventScrollDownToHomepageAppointments {
+  const _$OnboardingEventScrollDownToHomepageAppointmentsImpl();
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.scrollDownToAppointments()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnboardingEventScrollDownToHomepageAppointmentsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(OverlayEntry overlayEntry) storeOnboardingOverlay,
+    required TResult Function() close,
+    required TResult Function(ScrollController scrollController)
+        storeHomepageScrollController,
+    required TResult Function() scrollDownToAppointments,
+  }) {
+    return scrollDownToAppointments();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
+    TResult? Function()? close,
+    TResult? Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult? Function()? scrollDownToAppointments,
+  }) {
+    return scrollDownToAppointments?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(OverlayEntry overlayEntry)? storeOnboardingOverlay,
+    TResult Function()? close,
+    TResult Function(ScrollController scrollController)?
+        storeHomepageScrollController,
+    TResult Function()? scrollDownToAppointments,
+    required TResult orElse(),
+  }) {
+    if (scrollDownToAppointments != null) {
+      return scrollDownToAppointments();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnboardingEventStoreOnboardingOverlay value)
+        storeOnboardingOverlay,
+    required TResult Function(_OnboardingEventClose value) close,
+    required TResult Function(
+            _OnboardingEventStoreHomepageScrollController value)
+        storeHomepageScrollController,
+    required TResult Function(
+            _OnboardingEventScrollDownToHomepageAppointments value)
+        scrollDownToAppointments,
+  }) {
+    return scrollDownToAppointments(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnboardingEventStoreOnboardingOverlay value)?
+        storeOnboardingOverlay,
+    TResult? Function(_OnboardingEventClose value)? close,
+    TResult? Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult? Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
+  }) {
+    return scrollDownToAppointments?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnboardingEventStoreOnboardingOverlay value)?
+        storeOnboardingOverlay,
+    TResult Function(_OnboardingEventClose value)? close,
+    TResult Function(_OnboardingEventStoreHomepageScrollController value)?
+        storeHomepageScrollController,
+    TResult Function(_OnboardingEventScrollDownToHomepageAppointments value)?
+        scrollDownToAppointments,
+    required TResult orElse(),
+  }) {
+    if (scrollDownToAppointments != null) {
+      return scrollDownToAppointments(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnboardingEventScrollDownToHomepageAppointments
+    implements OnboardingEvent {
+  const factory _OnboardingEventScrollDownToHomepageAppointments() =
+      _$OnboardingEventScrollDownToHomepageAppointmentsImpl;
+}
+
+/// @nodoc
 mixin _$OnboardingState {
   OverlayEntry? get overlay => throw _privateConstructorUsedError;
+  ScrollController? get homepageScrollController =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OnboardingStateCopyWith<OnboardingState> get copyWith =>
@@ -345,7 +731,8 @@ abstract class $OnboardingStateCopyWith<$Res> {
           OnboardingState value, $Res Function(OnboardingState) then) =
       _$OnboardingStateCopyWithImpl<$Res, OnboardingState>;
   @useResult
-  $Res call({OverlayEntry? overlay});
+  $Res call(
+      {OverlayEntry? overlay, ScrollController? homepageScrollController});
 }
 
 /// @nodoc
@@ -362,12 +749,17 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
   @override
   $Res call({
     Object? overlay = freezed,
+    Object? homepageScrollController = freezed,
   }) {
     return _then(_value.copyWith(
       overlay: freezed == overlay
           ? _value.overlay
           : overlay // ignore: cast_nullable_to_non_nullable
               as OverlayEntry?,
+      homepageScrollController: freezed == homepageScrollController
+          ? _value.homepageScrollController
+          : homepageScrollController // ignore: cast_nullable_to_non_nullable
+              as ScrollController?,
     ) as $Val);
   }
 }
@@ -380,7 +772,8 @@ abstract class _$$OnboardingStateImplCopyWith<$Res>
       __$$OnboardingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({OverlayEntry? overlay});
+  $Res call(
+      {OverlayEntry? overlay, ScrollController? homepageScrollController});
 }
 
 /// @nodoc
@@ -395,12 +788,17 @@ class __$$OnboardingStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? overlay = freezed,
+    Object? homepageScrollController = freezed,
   }) {
     return _then(_$OnboardingStateImpl(
       overlay: freezed == overlay
           ? _value.overlay
           : overlay // ignore: cast_nullable_to_non_nullable
               as OverlayEntry?,
+      homepageScrollController: freezed == homepageScrollController
+          ? _value.homepageScrollController
+          : homepageScrollController // ignore: cast_nullable_to_non_nullable
+              as ScrollController?,
     ));
   }
 }
@@ -408,15 +806,19 @@ class __$$OnboardingStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OnboardingStateImpl implements _OnboardingState {
-  const _$OnboardingStateImpl({this.overlay = null});
+  const _$OnboardingStateImpl(
+      {this.overlay = null, this.homepageScrollController = null});
 
   @override
   @JsonKey()
   final OverlayEntry? overlay;
+  @override
+  @JsonKey()
+  final ScrollController? homepageScrollController;
 
   @override
   String toString() {
-    return 'OnboardingState(overlay: $overlay)';
+    return 'OnboardingState(overlay: $overlay, homepageScrollController: $homepageScrollController)';
   }
 
   @override
@@ -424,11 +826,15 @@ class _$OnboardingStateImpl implements _OnboardingState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnboardingStateImpl &&
-            (identical(other.overlay, overlay) || other.overlay == overlay));
+            (identical(other.overlay, overlay) || other.overlay == overlay) &&
+            (identical(
+                    other.homepageScrollController, homepageScrollController) ||
+                other.homepageScrollController == homepageScrollController));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, overlay);
+  int get hashCode =>
+      Object.hash(runtimeType, overlay, homepageScrollController);
 
   @JsonKey(ignore: true)
   @override
@@ -439,11 +845,15 @@ class _$OnboardingStateImpl implements _OnboardingState {
 }
 
 abstract class _OnboardingState implements OnboardingState {
-  const factory _OnboardingState({final OverlayEntry? overlay}) =
+  const factory _OnboardingState(
+          {final OverlayEntry? overlay,
+          final ScrollController? homepageScrollController}) =
       _$OnboardingStateImpl;
 
   @override
   OverlayEntry? get overlay;
+  @override
+  ScrollController? get homepageScrollController;
   @override
   @JsonKey(ignore: true)
   _$$OnboardingStateImplCopyWith<_$OnboardingStateImpl> get copyWith =>
